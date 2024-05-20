@@ -79,7 +79,7 @@ namespace NAPI
 	void _ACTSetCommonHeaderParameters(CurlRequestHelper& req, AuthInfo& authInfo)
 	{
 		req.addHeaderField("X-Nintendo-Platform-ID", "1");
-		req.addHeaderField("X-Nintendo-Device-Type", "2");
+		req.addHeaderField("X-Nintendo-Device-Type", "1");
 
 		req.addHeaderField("X-Nintendo-Client-ID", "a2efa818a34fa16b8afbc8a74eba3eda");
 		req.addHeaderField("X-Nintendo-Client-Secret", "c91cdb5658bd4954ade78533a339cf9a");
@@ -318,7 +318,7 @@ namespace NAPI
 		_ACTSetDeviceParameters(req, authInfo);
 		_ACTSetRegionAndCountryParameters(req, authInfo);
 		req.addHeaderField("X-Nintendo-FPD-Version", "0000");
-		req.addHeaderField("X-Nintendo-Environment", "L1");
+		req.addHeaderField("X-Nintendo-Environment", "D1");
 		req.addHeaderField("X-Nintendo-Title-ID", fmt::format("{:016x}", titleId));
 		uint32 uniqueId = ((titleId >> 8) & 0xFFFFF);
 		req.addHeaderField("X-Nintendo-Unique-ID", fmt::format("{:05x}", uniqueId));
